@@ -58,12 +58,10 @@ namespace CryptoProjectApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CryptoProjectApi v1"));
             }
 
-            app.UseCors("AllowMyClient");
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors("AllowMyClient");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
