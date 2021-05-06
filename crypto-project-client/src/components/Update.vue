@@ -48,6 +48,7 @@
 </template>
 <script>
 import axios from 'axios';
+axios.defaults.baseURL = 'https://localhost:44301';
 export default {
     created(){
         let vm = this;
@@ -118,6 +119,7 @@ export default {
                     response = await passwordNoSaltRequestAsync;
                 }
                 vm.passwordUpdated = response.data;
+                vm.get();
             } catch (error) {
                 let vm = this;
                 let errors = error.response.data.errors;
