@@ -33,7 +33,7 @@ namespace CryptoProjectApi
             var connection = Configuration.GetConnectionString("Default");
             services.AddCors(options => {
                 options.AddPolicy("AllowMyClient", builder => {
-                    builder.WithOrigins("http://localhost:8081")
+                    builder.WithOrigins("http://localhost:8081", "https://unfathered-dates.000webhostapp.com", "http://unfathered-dates.000webhostapp.com")
                     .AllowAnyHeader()
                     .AllowCredentials()
                     .AllowAnyMethod();
